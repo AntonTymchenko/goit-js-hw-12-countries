@@ -9,7 +9,7 @@ var debounce = require('lodash.debounce');
 const containerForCard = document.querySelector('.js-container');
 const inputEl = document.querySelector('.input');
 
-inputEl.addEventListener('input', debounce(onInputEvent, 500));
+inputEl.addEventListener('input', debounce(onInputEvent, 800));
 inputEl.addEventListener('click', onInputCkick);
 
 function onInputCkick() {
@@ -32,7 +32,6 @@ function onInputEvent() {
       .then(data => {
         if (data.length === 1) {
           renderCountryCard(data);
-          return;
         }
         return data;
       })
